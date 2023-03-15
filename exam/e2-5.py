@@ -1,13 +1,13 @@
-def check(s):
-  x = 0
-  y = len(s) - 1
-  while x <= y:
-    if s[x] != s[y]:
-      return False
-    x += 1
-    y -= 1
-  return True
-
-
 s = input("请输入一个正整数：")
-print("是回文数" if check(s) else "不是回文数")
+flg = False
+for i in s:
+  if i not in "0123456789":
+    print("输入错误")
+    flg = True
+    break
+
+if not flg:
+  if s == str(s)[::-1]:
+    print("是回文数")
+  else:
+    print("不是回文数")

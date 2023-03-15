@@ -1,12 +1,22 @@
-def gcd(x, y):
-  return x if y == 0 else gcd(y, x % y)
-
-
-def lcm(x, y):
-  return x * y // gcd(x, y)
-
-
 a, b = map(int, input("请输入两个数：").split())
-aa = gcd(a, b)
-bb = lcm(a, b)
+aa = 0
+x = a
+y = b
+while y != 0:
+  temp = x % y
+  x = y
+  y = temp
+  aa = x
+
+x = a
+y = b
+re = 0
+c = x if x > y else y
+while c <= a * b:
+  if c % a == 0 and c % b == 0:
+    re = c
+    break
+  c += 1
+bb = re
+
 print(f"最大公约数为{aa}，最小公倍数为{bb}")

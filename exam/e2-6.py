@@ -1,13 +1,9 @@
-def check(x):
-  n = x
+for i in range(100, 1000):
+  n = i
   a = n // 100
   n %= 100
   b = n // 10
   n %= 10
   c = n
-  return a * a * a + b * b * b + c * c * c == x
-
-
-for i in range(100, 1000):
-  if check(i):
+  if a * a * a + b * b * b + c * c * c == i:
     print(i)
